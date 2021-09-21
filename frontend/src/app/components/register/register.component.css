@@ -1,0 +1,121 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.register_form {
+    margin-top: 2vh;
+}
+mat-form-field {
+    width: 50%;
+    margin-bottom: 26px;
+    text-align: center;
+    /* line-height: 2.125 !important */
+  }
+
+  .mat-input-element {
+    font-size: 21px !important;
+}
+
+::ng-deep .mat-select-value {
+    font-size: 21px !important;
+}
+.city_row {
+    padding: 0;
+}
+.rect_img {
+    z-index: 15;position: absolute;
+    left: -3px;
+}
+.design {
+    margin-bottom: 9vh;
+    margin-top: 3vh;
+}
+.registeration_form {
+    margin-top: 5vh;
+}
+.hr_seperator {    
+    margin-top: 19px;
+    position: absolute;
+    border-top: 5px solid rgb(222 219 219);
+}
+.rect_img1 {
+    /* align-items: center; */
+    position: absolute;
+    left: 25%;
+}
+.rect_img2 {
+    position: absolute;
+    left: 51%;
+}
+.next_btn {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    height: 42px;
+    width: 23.5em;
+    letter-spacing: 0.1em;
+}
+.next_btn2 {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    height: 42px;
+    width: 15.5em;
+    letter-spacing: 0.1em;
+}
+.back_btn {
+    border: none;
+    /* background-color: black; */
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    height: 42px;
+    width: 8.5em;
+    margin-right: 2vw;
+    letter-spacing: 0.1em;
+}
+.upload {
+    margin-bottom: 7vh;
+    margin-top: 3vh;
+    margin-left: 1vw;
+}
+.person_img {
+    padding-left: 4%;
+}
+.upload_icon {
+    position: absolute;
+    width: 12%;
+    left: 79px;
+    top: 164px;
+}
+.upload_usericon {
+    position: absolute;
+    width: 12%;
+    left: 37%;
+    top: 164px;
+}
+.rect_icon {
+    width: 13vw;
+    position: relative;
+}
+.upload_logotext {
+    position: absolute;
+    top: 42%;
+    left: 10%;
+    font-size: 21px;
+    width: 105px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+.upload_usertext {
+    position: absolute;
+    top: 42%;
+    left: 38%;
+    font-size: 21px;
+    width: 105px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}

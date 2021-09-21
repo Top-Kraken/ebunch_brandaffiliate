@@ -1,0 +1,26 @@
+
+.footer {
+    background-color: black;
+    /* padding-top: 13px; */
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+}
+
+#footer_logo-img {
+    margin-right: 17px;
+    margin-left: 7rem;
+    /* height: 70%; */
+    height: 3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.fb_icon {
+    height: 2em;
+    margin-left: 21px;
+}
+.contact_img {
+    height: 1.3em;
+    margin-left: 24px;
+    margin-top: 9px;
+}

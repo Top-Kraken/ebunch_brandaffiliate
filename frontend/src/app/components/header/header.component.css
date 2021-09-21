@@ -1,0 +1,26 @@
+.header {
+    background-color: #efefef;
+    /* padding-top: 19px;
+    padding-bottom: 12px; */
+    margin: 0px;
+    height: 8vh;
+}
+#logo-img {
+    margin-right: 17px;
+    margin-left: 6rem;
+    height: 2em;
+}
+#subtitle-img {
+    position: absolute;
+    left: 28.5em;
+    top: 3px;
+}
+.login_btn {
+    background: #a854a2;
+    color: white;
+    border: none;
+    width: 10vw;
+    height: 4vh;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
