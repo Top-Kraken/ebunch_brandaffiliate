@@ -1,36 +1,31 @@
 <app-header></app-header>
 <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row register_form">
-    <div class="col-lg-6 person_img">
-        <img src="../../../assets/register1.png" *ngIf="page == 1">
-        <img src="../../../assets/register2.png" *ngIf="page == 2">
-        <img src="../../../assets/register3.png" *ngIf="page == 3">
+    <div class="col-lg-6  person_img_blk" fxShow="true" fxHide.lt-md="true">
+        <img src="../../../assets/register1.png" class="person_img" *ngIf="page == 1">
+        <img src="../../../assets/register2.png" class="person_img" *ngIf="page == 2">
+        <img src="../../../assets/register3.png" class="person_img" *ngIf="page == 3">
     </div>
-    <div class="col-lg-6 register_form">
-        <div class="design row" *ngIf="page == 1">
-            <img src="../../../assets/Rectangle 3.PNG" class="rect_img">
-            <hr width="55%" class="hr_seperator">
-            <img src="../../../assets/Rectangle 3 copy.PNG" class="rect_img1">
+    <div class="col-lg-5">
+        <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.lt-md="true" class="prog_1">
+        <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
 
-            <img src="../../../assets/Rectangle 3 copy.PNG" class="rect_img2">
-        </div>
-        <div class="design row" *ngIf="page == 2">
-            <img src="../../../assets/Rectangle 3.PNG" class="rect_img">
-            <hr width="55%" class="hr_seperator">
-            <img src="../../../assets/Rectangle 3.PNG" class="rect_img1">
+        <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.lt-md="true" class="prog_1">
+        <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
 
-            <img src="../../../assets/Rectangle 3 copy.PNG" class="rect_img2">
-        </div>
-        <div class="design row" *ngIf="page == 3">
+        <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.lt-md="true" class="prog_1">
+        <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
+
+        <!-- <div *ngIf="page == 3">
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img">
             <hr width="55%" class="hr_seperator">
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img1">
 
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img2">
-        </div>
+        </div> -->
         <form class="registeration_form">
             <div *ngIf="page == 1">
                 <mat-form-field>
-                    <mat-label>Select</mat-label>
+                    <!-- <mat-label>Select</mat-label> -->
                     <mat-select value="one">
                         <mat-option value="one">Industry</mat-option>
                         <mat-option value="two">Second option</mat-option>
@@ -39,21 +34,21 @@
                 <br>
                 <mat-form-field class="address_line_1">
                     <mat-label>Address Line 1</mat-label>
-                    <input matInput placeholder="Address 1" value="Sushi">
+                    <input matInput placeholder="Address 1">
                 </mat-form-field>
                 <br>
                 <mat-form-field class="address_line_2">
                     <mat-label>Address Line 2</mat-label>
-                    <input matInput placeholder="Address 2" value="Sushi">
+                    <input matInput placeholder="Address 2">
                 </mat-form-field>
                 <br>
-                <div class="col-lg-10 row city_row">
+                <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row city_row">
 
-                    <mat-form-field class="col-lg-4 address_line_2">
+                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
                         <mat-label>City</mat-label>
                         <input matInput placeholder="Address 2">
                     </mat-form-field>
-                    <mat-form-field class="col-lg-4 state_row">
+                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-5 state_row">
                         <mat-label>State</mat-label>
                         <mat-select value="one">
                             <mat-option value="one">State</mat-option>
@@ -62,18 +57,17 @@
                     </mat-form-field>
                 </div>
 
-                <div class="col-lg-10 row city_row">
-
-                    <mat-form-field class="col-lg-4 address_line_2">
+                <div class="col-lg-12 row city_row">
+                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
                         <mat-label>Country</mat-label>
                         <input matInput placeholder="Country">
                     </mat-form-field>
-                    <mat-form-field class="col-lg-4 address_line_2">
+                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-5 address_line_2">
                         <mat-label>Zip Code</mat-label>
                         <input matInput placeholder="Zip Code">
                     </mat-form-field>
                 </div>
-                <button type="button" class="next_btn" (click)="navigate_page(2, 'next')">Next</button>
+                <button type="button" class="next_btn" disabled (click)="navigate_page(2, 'next')">Next</button>
             </div>
             <div *ngIf="page == 2">
                 <div class="row">
@@ -106,7 +100,6 @@
                         <input matInput placeholder="Company Phone">
                     </mat-form-field>
 
-                    
                 </div>
                 <div class="col-lg-12 row details_row">
                     <mat-form-field class="col-lg-4 personal_email">
@@ -117,7 +110,7 @@
                         <mat-label>PERSONAL PHONE</mat-label>
                         <input matInput placeholder="Personal Phone">
                     </mat-form-field>
-                    </div>
+                </div>
                 <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
                 <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
             </div>
@@ -125,5 +118,7 @@
 
     </div>
 </div>
+<div class="footer">
+    <app-footer></app-footer>
 
-<app-footer></app-footer>
+</div>

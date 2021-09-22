@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

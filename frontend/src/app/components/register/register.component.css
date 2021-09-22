@@ -1,58 +1,43 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
-.register_form {
-    margin-top: 2vh;
+.mob_prog_1 {   
+    width: 67vw;
+    margin-left: 11vw;
+}
+.prog_1 {
+    width: 35vw;
 }
 mat-form-field {
-    width: 50%;
-    margin-bottom: 26px;
+    width: 80%;
+    margin-bottom: 1vh;
     text-align: center;
     /* line-height: 2.125 !important */
-  }
-
-  .mat-input-element {
-    font-size: 21px !important;
 }
 
-::ng-deep .mat-select-value {
-    font-size: 21px !important;
+.registeration_form {
+    text-align: center;
 }
+
+/* .mat-input-element {
+    font-size: 1.1vw !important;
+} */
+
+/* ::ng-deep .mat-select-value {
+    font-size: 1.1vw !important;
+} */
 .city_row {
     padding: 0;
+    margin: 0;
+    margin-left: 2.7vw;
 }
-.rect_img {
-    z-index: 15;position: absolute;
-    left: -3px;
-}
-.design {
-    margin-bottom: 9vh;
-    margin-top: 3vh;
-}
-.registeration_form {
-    margin-top: 5vh;
-}
-.hr_seperator {    
-    margin-top: 19px;
-    position: absolute;
-    border-top: 5px solid rgb(222 219 219);
-}
-.rect_img1 {
-    /* align-items: center; */
-    position: absolute;
-    left: 25%;
-}
-.rect_img2 {
-    position: absolute;
-    left: 51%;
-}
-.next_btn {
+.next_btn {   
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 4vw;
     font-weight: 800;
-    height: 42px;
-    width: 23.5em;
+    height: 5vh;
+    margin-top: 2vw;
+    width: 49vw;
     letter-spacing: 0.1em;
 }
 .next_btn2 {
@@ -80,20 +65,24 @@ mat-form-field {
     margin-top: 3vh;
     margin-left: 1vw;
 }
-.person_img {
+.person_img_blk {
     padding-left: 4%;
+    height: 87vh;
+}
+.person_img {
+    height: 71vh;
 }
 .upload_icon {
     position: absolute;
     width: 12%;
-    left: 79px;
-    top: 164px;
+    left: 4.3vw;
+    top: 19vh;
 }
 .upload_usericon {
     position: absolute;
     width: 12%;
-    left: 37%;
-    top: 164px;
+    left: 18.4vw;
+    top: 19vh;
 }
 .rect_icon {
     width: 13vw;
@@ -101,19 +90,21 @@ mat-form-field {
 }
 .upload_logotext {
     position: absolute;
-    top: 42%;
-    left: 10%;
-    font-size: 21px;
+    top: 32vh;
+    left: 4.6vw;
+    /* top: 42%; */
+    /* left: 10%; */
+    font-size: 1.1vw;
     width: 105px;
-    line-height: 26px;
+    line-height: 3vh;
     text-align: center;
     letter-spacing: 0.05em;
 }
 .upload_usertext {
     position: absolute;
-    top: 42%;
-    left: 38%;
-    font-size: 21px;
+    top: 32vh;
+    left: 19.5vw;
+    font-size: 1.1vw;
     width: 105px;
     line-height: 26px;
     text-align: center;
@@ -129,4 +120,11 @@ mat-form-field {
 }
 .details_row {
     padding: 0;
+}
+
+.footer {
+    width: 100vw;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
 }
