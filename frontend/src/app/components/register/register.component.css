@@ -6,6 +6,26 @@
 }
 .prog_1 {
     width: 35vw;
+    margin-left: 1.2vw;
+}
+@media (min-width: 1281px)  {
+    mat-form-field {
+        width: 75%;
+    margin-bottom: 0.5vh;
+    font-size: 28px !important;
+    text-align: center;
+        /* line-height: 2.125 !important */
+    }
+
+.city_row {
+    padding: 0;
+    margin: 0;
+    margin-left: 4.4vw;
+}
+}
+
+.registeration_form {
+    text-align: center;
 }
 mat-form-field {
     width: 80%;
@@ -13,31 +33,36 @@ mat-form-field {
     text-align: center;
     /* line-height: 2.125 !important */
 }
-
-.registeration_form {
-    text-align: center;
-}
-
 /* .mat-input-element {
     font-size: 1.1vw !important;
-} */
+}
 
-/* ::ng-deep .mat-select-value {
+::ng-deep .mat-select-value {
     font-size: 1.1vw !important;
 } */
 .city_row {
     padding: 0;
     margin: 0;
-    margin-left: 2.7vw;
+    margin-left: 4.4vw;
 }
-.next_btn {   
+.mob_next_btn {    
     background-color: black;
     color: white;
     font-size: 4vw;
     font-weight: 800;
+    height: 4vh;
+    margin-top: 4vh;
+    width: 80vw;
+    letter-spacing: 0.1em;
+}
+.next_btn {    
+    background-color: black;
+    color: white;
+    font-size: 31px;
+    font-weight: 800;
     height: 5vh;
     margin-top: 2vw;
-    width: 49vw;
+    width: 14vw;
     letter-spacing: 0.1em;
 }
 .next_btn2 {
@@ -127,4 +152,25 @@ mat-form-field {
     position: absolute;
     margin: 0;
     bottom: 0;
+}
+
+/* @media (min-width: 1281px)  { */
+.register_form {
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+/* } */
+
+.mob_rect2 {
+    height: 13vh;
+    position: relative;
+    /* right: -49vw; */
+    left: 71vw;
+}
+.mob_rect1 {
+    height: 13vh;
+    padding-top: 1.5vh;
+    position: absolute;
+    right: 16vw;
 }

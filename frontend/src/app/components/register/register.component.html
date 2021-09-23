@@ -1,124 +1,138 @@
-<app-header></app-header>
-<div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row register_form">
-    <div class="col-lg-6  person_img_blk" fxShow="true" fxHide.lt-md="true">
-        <img src="../../../assets/register1.png" class="person_img" *ngIf="page == 1">
-        <img src="../../../assets/register2.png" class="person_img" *ngIf="page == 2">
-        <img src="../../../assets/register3.png" class="person_img" *ngIf="page == 3">
-    </div>
-    <div class="col-lg-5">
-        <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.lt-md="true" class="prog_1">
-        <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
+<div>
+    <app-header></app-header>
+    <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row register_form">
+        <div class="col-lg-6  person_img_blk" fxShow="true" fxHide.lt-md="true">
+            <img src="../../../assets/register1.png" class="person_img" *ngIf="page == 1">
+            <img src="../../../assets/register2.png" class="person_img" *ngIf="page == 2">
+            <img src="../../../assets/register3.png" class="person_img" *ngIf="page == 3">
+        </div>
+        <div class="col-lg-5">
+            <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.lt-md="true" class="prog_1">
+            <img src="../../../assets/progress1.png" *ngIf="page == 1" fxShow="true" fxHide.gt-sm="true"
+                class="mob_prog_1">
 
-        <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.lt-md="true" class="prog_1">
-        <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
+            <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.lt-md="true" class="prog_1">
+            <img src="../../../assets/progress2.png" *ngIf="page == 2" fxShow="true" fxHide.gt-sm="true"
+                class="mob_prog_1">
 
-        <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.lt-md="true" class="prog_1">
-        <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.gt-sm="true" class="mob_prog_1">
+            <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.lt-md="true" class="prog_1">
+            <img src="../../../assets/progress3.png" *ngIf="page == 3" fxShow="true" fxHide.gt-sm="true"
+                class="mob_prog_1">
 
-        <!-- <div *ngIf="page == 3">
+            <!-- <div *ngIf="page == 3">
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img">
             <hr width="55%" class="hr_seperator">
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img1">
 
             <img src="../../../assets/Rectangle 3.PNG" class="rect_img2">
         </div> -->
-        <form class="registeration_form">
-            <div *ngIf="page == 1">
-                <mat-form-field>
-                    <!-- <mat-label>Select</mat-label> -->
-                    <mat-select value="one">
-                        <mat-option value="one">Industry</mat-option>
-                        <mat-option value="two">Second option</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <br>
-                <mat-form-field class="address_line_1">
-                    <mat-label>Address Line 1</mat-label>
-                    <input matInput placeholder="Address 1">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="address_line_2">
-                    <mat-label>Address Line 2</mat-label>
-                    <input matInput placeholder="Address 2">
-                </mat-form-field>
-                <br>
-                <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row city_row">
-
-                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
-                        <mat-label>City</mat-label>
-                        <input matInput placeholder="Address 2">
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-5 state_row">
-                        <mat-label>State</mat-label>
-                        <mat-select value="one">
-                            <mat-option value="one">State</mat-option>
-                            <mat-option value="two">Second option</mat-option>
+            <form class="registeration_form">
+                <div *ngIf="page == 1">
+                    <mat-form-field>
+                        <mat-label>Industry</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let industry of industries" [value]="industry.industryId">
+                                {{industry.industryName}}</mat-option>
                         </mat-select>
                     </mat-form-field>
-                </div>
-
-                <div class="col-lg-12 row city_row">
-                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
-                        <mat-label>Country</mat-label>
-                        <input matInput placeholder="Country">
+                    <br>
+                    <mat-form-field class="address_line_1">
+                        <mat-label>Address Line 1</mat-label>
+                        <input matInput placeholder="Address 1">
                     </mat-form-field>
-                    <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-5 address_line_2">
-                        <mat-label>Zip Code</mat-label>
-                        <input matInput placeholder="Zip Code">
+                    <br>
+                    <mat-form-field class="address_line_2">
+                        <mat-label>Address Line 2</mat-label>
+                        <input matInput placeholder="Address 2">
                     </mat-form-field>
-                </div>
-                <button type="button" class="next_btn" disabled (click)="navigate_page(2, 'next')">Next</button>
-            </div>
-            <div *ngIf="page == 2">
-                <div class="row">
-                    <div class="upload">
-                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
-                        <img src="../../../assets/Upload.PNG" class="upload_icon">
-                        <div class="upload_logotext"> COMPANY LOGO</div>
+                    <br>
+                    <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 row city_row">
+                        <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
+                            <mat-label>Country</mat-label>
+                            <mat-select (selectionChange)="oncountrychange($event)">
+                                <mat-option *ngFor="let country of Countries" [value]="country.countryId">
+                                    {{country.countryName}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4 col-xs-5 col-sm-5 col-md-5 col-5 state_row">
+                            <mat-label>State</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let state of states" value="state.stateName">{{state.stateName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
-                    <div class="upload">
-                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
-                        <img src="../../../assets/Upload.PNG" class="upload_usericon">
-                        <div class="upload_usertext"> USER PHOTO</div>
+                    <div class="col-lg-12 row city_row">
+                        <mat-form-field class="col-lg-5 col-xs-5 col-sm-5 col-md-5 col-6 address_line_2">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="Address 2">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4 col-xs-5 col-sm-5 col-md-5 col-5 address_line_2">
+                            <mat-label>Zip Code</mat-label>
+                            <input matInput placeholder="Zip Code">
+                        </mat-form-field>
                     </div>
-                </div>
-                <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
-                <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
-            </div>
 
-            <div *ngIf="page == 3">
-                <div class="details">
-                    <img src="../../../assets/Google Widget.PNG" class="wdg_img">
-                </div>
-                <div class="col-lg-12 row details_row">
-                    <mat-form-field class="col-lg-4 company_email">
-                        <mat-label>COMPANY EMAIL</mat-label>
-                        <input matInput placeholder="Company Email">
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-3  company_phone">
-                        <mat-label>COMPANY PHONE</mat-label>
-                        <input matInput placeholder="Company Phone">
-                    </mat-form-field>
+                    <button type="button" class="next_btn" fxShow="true" fxHide.lt-md="true"
+                        (click)="navigate_page(2, 'next')">NEXT</button>
 
+                    <button type="button" fxShow="true" fxHide.gt-sm="true" class="mob_next_btn" disabled
+                        (click)="navigate_page(2, 'next')">NEXT</button>
                 </div>
-                <div class="col-lg-12 row details_row">
-                    <mat-form-field class="col-lg-4 personal_email">
-                        <mat-label>PERSONAL EMAIL</mat-label>
-                        <input matInput placeholder="Personal Email">
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-3 personal_phone ">
-                        <mat-label>PERSONAL PHONE</mat-label>
-                        <input matInput placeholder="Personal Phone">
-                    </mat-form-field>
+                <div *ngIf="page == 2">
+                    <div class="row">
+                        <div class="upload">
+                            <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
+                            <img src="../../../assets/Upload.PNG" class="upload_icon">
+                            <div class="upload_logotext"> COMPANY LOGO</div>
+                        </div>
+                        <div class="upload">
+                            <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
+                            <img src="../../../assets/Upload.PNG" class="upload_usericon">
+                            <div class="upload_usertext"> USER PHOTO</div>
+                        </div>
+                    </div>
+                    <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
                 </div>
-                <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
-                <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
-            </div>
-        </form>
 
+                <div *ngIf="page == 3">
+                    <div class="details">
+                        <img src="../../../assets/Google Widget.PNG" class="wdg_img">
+                    </div>
+                    <div class="col-lg-12 row details_row">
+                        <mat-form-field class="col-lg-4 company_email">
+                            <mat-label>COMPANY EMAIL</mat-label>
+                            <input matInput placeholder="Company Email">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-3  company_phone">
+                            <mat-label>COMPANY PHONE</mat-label>
+                            <input matInput placeholder="Company Phone">
+                        </mat-form-field>
+
+                    </div>
+                    <div class="col-lg-12 row details_row">
+                        <mat-form-field class="col-lg-4 personal_email">
+                            <mat-label>PERSONAL EMAIL</mat-label>
+                            <input matInput placeholder="Personal Email">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-3 personal_phone ">
+                            <mat-label>PERSONAL PHONE</mat-label>
+                            <input matInput placeholder="Personal Phone">
+                        </mat-form-field>
+                    </div>
+                    <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- <div class="rects">
+            <img src="../../../assets/Rectangle 2 copy 2.PNG"  fxShow="true" fxHide.gt-sm="true" class="mob_rect1">
+            <img src="../../../assets/Rectangle 2 copy.PNG"  fxShow="true" fxHide.gt-sm="true" class="mob_rect2">
+        </div> -->
     </div>
-</div>
-<div class="footer">
-    <app-footer></app-footer>
-
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
 </div>

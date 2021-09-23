@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  API_ENDPOINT: "http://35.182.216.225:8000/v1"
 };
