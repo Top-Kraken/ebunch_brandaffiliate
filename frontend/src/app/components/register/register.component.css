@@ -1,12 +1,4 @@
-/* 
-.person_img {
-    height: 79vh;
-}
-.form_blk {
-    margin-right: auto;
-} */
-@media (min-width: 1025px) {
-    
+@media (min-width: 1025px) {    
     .register_comp {
         height: 78vh;
         display: flex;
@@ -19,10 +11,6 @@
     .person_img {
         height: 72.6vh;
     }
-    /* .prog_1 {
-        height: 4vh;
-    } */
-
     .prog_1 {
         width: 29vw;
         margin-left: auto;
@@ -50,26 +38,37 @@
     .zipcode, .state {
         width: 40%;
     }
-    .next_btn {
-        width: 13vw;
-        margin-left: 8vw;
-        background-color: black;
-        color: white;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        margin-top: 4%;
+
+    .upload_icon {
+        position: absolute;
+        left: 38%;
+        top: 15%;
+        height: 38%;
     }
-    
+    .next_btn {
+        border: none;
+        font-weight: 600;
+        color: white;
+        background-color: black;
+        letter-spacing: 0.1em;
+        width: 47%;
+        margin-left: 28%;
+        margin-top: 8%;
+        padding-top: 5px;
+    padding-bottom: 5px;
+    }
+    .upload_logotext {
+        position: absolute;
+        left: 38%;
+        width: 25%;
+        top: 61%;
+    }
+
+    .rect_icon {
+        height: 26vh;
+    }
   }
 
-
-  /* @media (min-width: 1024px) and (max-width: 1281px) { 
-    .register_comp {
-        height: 75vh;
-        display: flex;
-        align-items: center;
-    }
-  } */
 
   @media (min-width: 768px) and (max-width: 1024px) { 
     .register_comp {
@@ -77,21 +76,48 @@
         display: flex;
         align-items: center;
     }
-  }
-/* 
-  @media (min-width: 1024px) and (max-width: 1280px) { 
-    .register_comp {
-        height: 76.1vh;
-        display: flex;
-        align-items: center;
+
+    .upload_icon {
+        position: absolute;
+        left: 40%;
+        top: 19%;
+        height: 38%;
     }
-  } */
+    .upload_logotext {
+        position: absolute;
+        left: 38%;
+        width: 25%;
+        top: 69%;
+    }
+  }
 
   @media (min-width: 280px) and (max-width: 767px) {
     .register_comp {
         height: 73.4vh;
         display: flex;
         align-items: center;
+    }  
+
+    .upload_icon {
+        position: absolute;
+        left: 35%;
+        top: 15%;
+        height: 36%;
+    }
+    .back_btn {
+        background-color: #e6e6e6;
+        border: none;
+        font-weight: 500;
+        width: 36%;
+        letter-spacing: 0.1em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .upload_logotext {
+        position: absolute;
+        left: 37%;
+        width: 25%;
+        top: 62%;
     }
   }
 
@@ -135,5 +161,57 @@
         color: white;
         font-weight: 600;
         letter-spacing: 0.1em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .rect_icon {
+        height: 24vh;
     }
   }
+
+/* CSS For all screen sizes  */
+
+
+
+.upload {
+    position: relative;
+}
+.upload1 {
+    position: relative;
+    margin-bottom: 4%;
+}
+.uploads {
+    text-align: center;
+    margin-bottom: 8%;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next_btn2 {
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    /* margin-right: auto; */
+    margin-left: 7%;
+    letter-spacing: 0.1em;
+    width: 51%;
+    padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.back_btn {
+    background-color: #e6e6e6;
+    border: none;
+    font-weight: 500;
+    width: 36%;
+    letter-spacing: 0.1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

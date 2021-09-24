@@ -1,11 +1,11 @@
 <app-header></app-header>
 <div class="register_comp">
     <div class="img_blk">
-        <img src="../../../assets/register1.png" class="person_img">
+        <img [src]='"../../../assets/register" +page+ ".png"' class="person_img">
     </div>
     <div class="form_blk">
 
-        <img src="../../../assets/progress1.png" *ngIf="page == 1" class="prog_1">
+        <img [src]='"../../../assets/progress" +page +".png"' class="prog_1">
         
         <form class="registeration_form">
             <div *ngIf="page == 1">
@@ -54,25 +54,27 @@
                         <input matInput placeholder="Zip Code">
                     </mat-form-field>
                 </div>
-                <button type="button" class="next_btn" disabled
+                <button type="button" class="next_btn"
                     (click)="navigate_page(2, 'next')">NEXT</button>
 
             </div>
             <div *ngIf="page == 2">
-                <div class="row">
-                    <div class="upload">
+                <div class="uploads">
+                    <div class="upload1">
                         <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
                         <img src="../../../assets/Upload.PNG" class="upload_icon">
                         <div class="upload_logotext"> COMPANY LOGO</div>
                     </div>
                     <div class="upload">
                         <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
-                        <img src="../../../assets/Upload.PNG" class="upload_usericon">
-                        <div class="upload_usertext"> USER PHOTO</div>
+                        <img src="../../../assets/Upload.PNG" class="upload_icon">
+                        <div class="upload_logotext"> USER PHOTO</div>
                     </div>
                 </div>
-                <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
-                <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
+                <div class="btns">
+                    <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')" disabled>NEXT</button>
+                </div>
             </div>
 
             <div *ngIf="page == 3">
