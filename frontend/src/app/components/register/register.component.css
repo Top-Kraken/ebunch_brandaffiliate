@@ -1,176 +1,145 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* 
+.person_img {
+    height: 79vh;
+}
+.form_blk {
+    margin-right: auto;
+} */
+  @media (min-width: 1025px) {
+    
+    .register_comp {
+        height: 78vh;
+        display: flex;
+        align-items: center;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .person_img {
+        height: 72.6vh;
+    }
+    /* .prog_1 {
+        height: 4vh;
+    } */
 
-.mob_prog_1 {   
-    width: 67vw;
-    margin-left: 11vw;
-}
-.prog_1 {
-    width: 35vw;
-    margin-left: 1.2vw;
-}
-@media (min-width: 1281px)  {
-    mat-form-field {
-        width: 75%;
-    margin-bottom: 0.5vh;
-    font-size: 28px !important;
-    text-align: center;
-        /* line-height: 2.125 !important */
+    .prog_1 {
+        width: 29vw;
+        margin-left: auto;
+        margin-right: auto;
+        /* text-align: center; */
+        display: block;
+    }
+    .img_blk {
+        margin-left: 16vw;
+        margin-right: 10vw;
+    }
+    .registeration_form {
+        padding-left: 35px;
+        padding-right: 35px;
+        margin-top: 4%;
+    }
+    .mat-form-field {
+        width: 100%;
+        text-align: center;
+    }
+    .country, .city {
+        width: 50%;
+        margin-right: 10%;
+    }
+    .zipcode, .state {
+        width: 40%;
+    }
+    .next_btn {
+        width: 13vw;
+        margin-left: 8vw;
+        background-color: black;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        margin-top: 4%;
+    }
+    
+  }
+/* @media (min-width: 768px) and (max-width: 1024px) {
+    .register_comp {
+        height: 78vh;
+        display: flex;
+        align-items: center;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .person_img {
+        height: 72.6vh;
+    }
+    .prog_1 {
+        height: 4vh;
     }
 
-.city_row {
-    padding: 0;
-    margin: 0;
-    margin-left: 4.4vw;
-}
-}
+    .img_blk {
+        margin-left: 16vw;
+        margin-right: 10vw;
+    }
+    .country, .city {
+        width: 50%;
+        margin-right: 10%;
+    }
+    .zipcode, .state {
+        width: 40%;
+    }
+    .mat-form-field {
+        width: 100%;
+        text-align: center;
+    }
+  } */
 
-.registeration_form {
-    text-align: center;
-}
-mat-form-field {
-    width: 80%;
-    margin-bottom: 1vh;
-    text-align: center;
-    /* line-height: 2.125 !important */
-}
-/* .mat-input-element {
-    font-size: 1.1vw !important;
-}
 
-::ng-deep .mat-select-value {
-    font-size: 1.1vw !important;
-} */
-.city_row {
-    padding: 0;
-    margin: 0;
-    margin-left: 4.4vw;
-}
-.mob_next_btn {    
-    background-color: black;
-    color: white;
-    font-size: 4vw;
-    font-weight: 800;
-    height: 4vh;
-    margin-top: 4vh;
-    width: 80vw;
-    letter-spacing: 0.1em;
-}
-.next_btn {    
-    background-color: black;
-    color: white;
-    font-size: 31px;
-    font-weight: 800;
-    height: 5vh;
-    margin-top: 2vw;
-    width: 14vw;
-    letter-spacing: 0.1em;
-}
-.next_btn2 {
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    font-weight: 800;
-    height: 42px;
-    width: 15.5em;
-    letter-spacing: 0.1em;
-}
-.back_btn {
-    border: none;
-    /* background-color: black; */
-    color: black;
-    font-size: 20px;
-    font-weight: 800;
-    height: 42px;
-    width: 8.5em;
-    margin-right: 2vw;
-    letter-spacing: 0.1em;
-}
-.upload {
-    margin-bottom: 7vh;
-    margin-top: 3vh;
-    margin-left: 1vw;
-}
-.person_img_blk {
-    padding-left: 4%;
-    height: 87vh;
-}
-.person_img {
-    height: 71vh;
-}
-.upload_icon {
-    position: absolute;
-    width: 12%;
-    left: 4.3vw;
-    top: 19vh;
-}
-.upload_usericon {
-    position: absolute;
-    width: 12%;
-    left: 18.4vw;
-    top: 19vh;
-}
-.rect_icon {
-    width: 13vw;
-    position: relative;
-}
-.upload_logotext {
-    position: absolute;
-    top: 32vh;
-    left: 4.6vw;
-    /* top: 42%; */
-    /* left: 10%; */
-    font-size: 1.1vw;
-    width: 105px;
-    line-height: 3vh;
-    text-align: center;
-    letter-spacing: 0.05em;
-}
-.upload_usertext {
-    position: absolute;
-    top: 32vh;
-    left: 19.5vw;
-    font-size: 1.1vw;
-    width: 105px;
-    line-height: 26px;
-    text-align: center;
-    letter-spacing: 0.05em;
-}
-
-.wdg_img {
-    width: 55%;
-}
-
-.details {
-    margin-bottom: 3vh;
-}
-.details_row {
-    padding: 0;
-}
-
-.footer {
-    width: 100vw;
-    position: absolute;
-    margin: 0;
-    bottom: 0;
-}
-
-/* @media (min-width: 1281px)  { */
-.register_form {
-    margin-left: 0;
-    padding-right: 0;
-    padding-left: 0;
-}
-/* } */
-
-.mob_rect2 {
-    height: 13vh;
-    position: relative;
-    /* right: -49vw; */
-    left: 71vw;
-}
-.mob_rect1 {
-    height: 13vh;
-    padding-top: 1.5vh;
-    position: absolute;
-    right: 16vw;
-}
+  /* @media (min-width: 280px) and (max-width: 767px) { */
+    @media (min-width: 280px) and (max-width: 950px) {
+    .register_comp {
+        height: 73.4vh;
+        display: flex;
+        align-items: center;
+    }
+    .img_blk {
+        display: none;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .registeration_form {
+        padding-left: 35px;
+        padding-right: 35px;
+        margin-top: 9%;
+    }
+    .mat-form-field {
+        width: 100%;
+        text-align: center;
+    }
+    .prog_1 {
+        width: 92vw;
+        margin-left: auto;
+        margin-right: auto;
+        /* text-align: center; */
+        display: block;
+    }
+    .country, .city {
+        width: 50%;
+        margin-right: 10%;
+    }
+    .zipcode, .state {
+        width: 40%;
+    }
+    .next_btn {
+        margin-left: 22%;
+        width: 59%;
+        margin-top: 9%;
+        background-color: black;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+  }

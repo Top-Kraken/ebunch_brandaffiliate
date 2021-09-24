@@ -12,9 +12,7 @@
     height: 3vh;
 }
 #subtitle-img {
-    position: absolute;
-    left: 21vw;
-    top: 0.66vh;
+    margin-left: 9%;
     height: 2vh;
 }
 .reg_img {
@@ -60,3 +58,55 @@
 .mob_reg_img {
     height: 1.5vh;
 }
+
+
+/* 
+@media (min-width: 767px) and (max-width: 1280px) {
+    .mob_reg_header , .mobile_login_btn, .mobile_logo{
+        display: none;
+    }
+
+    .header {
+        background-color: #efefef;
+        margin: 0px;
+        height: 9vh;
+        margin-bottom: 2vh;
+    }
+
+}
+
+@media (min-width: 280px) and (max-width: 767px) { 
+
+    #logo-img, #subtitle-img, .reg_img, .login_btn {
+        display: none;
+    }
+    .mobile_logo {
+        height: 5vh;
+        position: absolute;
+        top: 2vh;
+        left: 50%;
+    }
+
+    .mobile_login_btn {
+        position: absolute;
+        height: 2.5vh;
+        vertical-align: c;
+        top: 4vh;
+        right: 11vw;
+    }
+    .header {
+        background-color: #efefef;
+        margin: 0px;
+        height: 9vh;
+        margin-bottom: 2vh;
+    }
+
+    .mob_reg_header {
+        margin-top: 2.5vh;
+        text-align: center;
+    }
+
+    .mob_reg_img {
+        height: 1.5vh;
+    } 
+} */

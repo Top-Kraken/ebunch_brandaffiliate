@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   constructor(private configServive: ConfigService) { }
   page: any = 1;
   ngOnInit(): void {
+    console.log(window.innerHeight)
+    console.log(window.innerWidth)
     this.configServive.getCountryCode().subscribe((res: any) => {
       let countryCodesdata = res;
       this.Countries = countryCodesdata.response.countryList;
