@@ -1,13 +1,10 @@
 .header {
     background-color: #efefef;
-    /* padding-top: 19px;
-    padding-bottom: 12px; */
     margin: 0px;
     height: 8vh;
     margin-bottom: 3vh;
 }
 #logo-img {
-    /* margin-right: 17px; */
     margin-left: 5.5vw;
     height: 3vh;
 }
@@ -59,54 +56,98 @@
     height: 1.5vh;
 }
 
-
-/* 
-@media (min-width: 767px) and (max-width: 1280px) {
-    .mob_reg_header , .mobile_login_btn, .mobile_logo{
+@media (min-width: 1025px) {
+    .mobile_header, .mob_reg_header {
         display: none;
     }
-
     .header {
         background-color: #efefef;
         margin: 0px;
-        height: 9vh;
-        margin-bottom: 2vh;
+        height: 8vh;
+        margin-bottom: 3vh;
+        display: flex;
+        align-items: center;
+    }
+    #logo-img {
+        margin-left: 5.5vw;
+        height: 3vh;
+    }
+    #subtitle-img {
+        margin-left: 2%;
+        height: 2vh;
+    }
+    .reg_img {
+        height: 1.4vh;
+    }
+    .title {
+        width: 37%;
+        /* display: inherit; */
     }
 
+    .login_btn {
+        background: #a854a2;
+        color: white;
+        border: none;
+        width: 10vw;
+        height: 4vh;
+        margin-left: 31vw;
+        font-size: 1vw;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+    .header {
+        background-color: #efefef;
+        margin: 0px;
+        height: 8vh;
+        margin-bottom: 3vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1024px) {
+    .header {
+        background-color: #efefef;
+        margin: 0px;
+        height: 8vh;
+        margin-bottom: 4.3vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+    #logo-img {
+        margin-left: 5.5vw;
+        height: 2vh;
+    }
+    .mobile_header {
+        display: none;
+    }
+    .title {
+        width: 37%;
+        display: inherit;
+    }
+    .register {
+        display: none
+    }
+    .login_btn {
+        background: #a854a2;
+        color: white;
+        border: none;
+        width: 10vw;
+        height: 4vh;
+        margin-left: 41vw;
+        font-size: 1vw;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
 }
 
 @media (min-width: 280px) and (max-width: 767px) { 
-
-    #logo-img, #subtitle-img, .reg_img, .login_btn {
-        display: none;
-    }
-    .mobile_logo {
-        height: 5vh;
-        position: absolute;
-        top: 2vh;
-        left: 50%;
-    }
-
-    .mobile_login_btn {
-        position: absolute;
-        height: 2.5vh;
-        vertical-align: c;
-        top: 4vh;
-        right: 11vw;
-    }
     .header {
-        background-color: #efefef;
-        margin: 0px;
-        height: 9vh;
-        margin-bottom: 2vh;
+        display: none
     }
-
-    .mob_reg_header {
-        margin-top: 2.5vh;
-        text-align: center;
-    }
-
-    .mob_reg_img {
-        height: 1.5vh;
-    } 
-} */
+}

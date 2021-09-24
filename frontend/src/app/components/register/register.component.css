@@ -5,7 +5,7 @@
 .form_blk {
     margin-right: auto;
 } */
-  @media (min-width: 1025px) {
+@media (min-width: 1025px) {
     
     .register_comp {
         height: 78vh;
@@ -61,48 +61,42 @@
     }
     
   }
-/* @media (min-width: 768px) and (max-width: 1024px) {
+
+
+  /* @media (min-width: 1024px) and (max-width: 1281px) { 
     .register_comp {
-        height: 78vh;
+        height: 75vh;
         display: flex;
         align-items: center;
     }
-    .form_blk {
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .person_img {
-        height: 72.6vh;
-    }
-    .prog_1 {
-        height: 4vh;
-    }
+  } */
 
-    .img_blk {
-        margin-left: 16vw;
-        margin-right: 10vw;
+  @media (min-width: 768px) and (max-width: 1024px) { 
+    .register_comp {
+        height: 75vh;
+        display: flex;
+        align-items: center;
     }
-    .country, .city {
-        width: 50%;
-        margin-right: 10%;
-    }
-    .zipcode, .state {
-        width: 40%;
-    }
-    .mat-form-field {
-        width: 100%;
-        text-align: center;
+  }
+/* 
+  @media (min-width: 1024px) and (max-width: 1280px) { 
+    .register_comp {
+        height: 76.1vh;
+        display: flex;
+        align-items: center;
     }
   } */
 
-
-  /* @media (min-width: 280px) and (max-width: 767px) { */
-    @media (min-width: 280px) and (max-width: 950px) {
+  @media (min-width: 280px) and (max-width: 767px) {
     .register_comp {
         height: 73.4vh;
         display: flex;
         align-items: center;
     }
+  }
+
+  /* @media (min-width: 280px) and (max-width: 767px) { */
+    @media (min-width: 280px) and (max-width: 1024px) {
     .img_blk {
         display: none;
     }
