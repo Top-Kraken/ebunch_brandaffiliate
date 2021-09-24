@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   states: any;
   industries: any;
   constructor(private configServive: ConfigService) { }
-  page: any = 2;
+  page: any = 1;
   ngOnInit(): void {
     console.log(window.innerHeight)
     console.log(window.innerWidth)
