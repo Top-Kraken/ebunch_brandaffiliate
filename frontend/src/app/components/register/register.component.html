@@ -9,50 +9,50 @@
         <form class="registeration_form">
             <div *ngIf="page == 1">
                 <mat-form-field>
-                    <mat-label>Industry</mat-label>
+                    <mat-label>COMPANY NAME</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>INDUSTRY</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let industry of industries" [value]="industry.industryId">
                             {{industry.industryName}}</mat-option>
                     </mat-select>
                 </mat-form-field>
-                <br>
-                <mat-form-field class="address_line_1">
-                    <mat-label>Address Line 1</mat-label>
-                    <input matInput placeholder="Address 1">
-                </mat-form-field>
-                <br>
-                <mat-form-field class="address_line_2">
-                    <mat-label>Address Line 2</mat-label>
-                    <input matInput placeholder="Address 2">
-                </mat-form-field>
-                <br>
-                <div>
-                    <mat-form-field class="country">
-                        <mat-label>Country</mat-label>
-                        <mat-select (selectionChange)="oncountrychange($event)">
-                            <mat-option *ngFor="let country of Countries" [value]="country.countryId">
-                                {{country.countryName}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="state">
-                        <mat-label>State</mat-label>
-                        <mat-select>
-                            <mat-option *ngFor="let state of states" value="state.stateName">{{state.stateName}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field class="city">
-                        <mat-label>City</mat-label>
-                        <input matInput placeholder="Address 2">
-                    </mat-form-field>
 
-                    <mat-form-field class="zipcode">
-                        <mat-label>Zip Code</mat-label>
-                        <input matInput placeholder="Zip Code">
+                <div class="details_row">
+                    <mat-form-field class="half_width_1">
+                        <mat-label>COMPANY EMAIL</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="half_width">
+                        <mat-label>COMPANY PHONE</mat-label>
+                        <input matInput>
                     </mat-form-field>
                 </div>
+
+                <div class="details_row">
+                    <mat-form-field class="half_width_1">
+                        <mat-label>USER FIRST NAME</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="half_width">
+                        <mat-label>USER LAST NAME</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
+                <div class="details_row1">
+                    <mat-form-field class="half_width_1">
+                        <mat-label>USER EMAIL</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field class="half_width">
+                        <mat-label>USER PHONE</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+
                 <button type="button" class="next_btn" (click)="navigate_page(2, 'next')">NEXT</button>
 
             </div>
@@ -79,30 +79,46 @@
                 <div class="details">
                     <img src="../../../assets/Google Widget.PNG" class="wdg_img">
                 </div>
-                <div class="details_row">
-                    <mat-form-field class="company_email">
-                        <mat-label>COMPANY EMAIL</mat-label>
-                        <input matInput placeholder="Company Email">
-                    </mat-form-field>
-                    <mat-form-field class="company_phone">
-                        <mat-label>COMPANY PHONE</mat-label>
-                        <input matInput placeholder="Company Phone">
-                    </mat-form-field>
 
+                <mat-form-field class="address_line_1">
+                    <mat-label>ADDRESS LINE 1</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field class="address_line_2">
+                    <mat-label>ADDRESS LINE 2</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <div>
+                    <mat-form-field class="half_width_1">
+                        <mat-label>COUNTRY</mat-label>
+                        <mat-select (selectionChange)="oncountrychange($event)">
+                            <mat-option *ngFor="let country of Countries" [value]="country.countryId">
+                                {{country.countryName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="half_width">
+                        <mat-label>STATE</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let state of states" value="state.stateName">{{state.stateName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
                 <div class="details_row1">
-                    <mat-form-field class="personal_email">
-                        <mat-label>PERSONAL EMAIL</mat-label>
-                        <input matInput placeholder="Personal Email">
+                    <mat-form-field class="half_width_1">
+                        <mat-label>CITY</mat-label>
+                        <input matInput>
                     </mat-form-field>
-                    <mat-form-field class="personal_phone ">
-                        <mat-label>PERSONAL PHONE</mat-label>
-                        <input matInput placeholder="Personal Phone">
+
+                    <mat-form-field class="half_width">
+                        <mat-label>ZIP CODE</mat-label>
+                        <input matInput>
                     </mat-form-field>
                 </div>
                 <div class="btns">
                     <button type="button" class="back_btn" (click)="navigate_page(2, 'back')">BACK</button>
-                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">SUBMIT</button>
                 </div>
             </div>
         </form>

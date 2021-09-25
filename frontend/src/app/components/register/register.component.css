@@ -56,16 +56,18 @@
         width: 25%;
         top: 61%;
     }
-
+    .details_row1 {
+        margin-bottom: 4%;
+    }
     .rect_icon {
-        height: 26vh;
+        height: 22vh;
     }
     .wdg_img {
-        width: 54vh;
+        width: 18vw;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 4vh;
+        margin-bottom: 1vh;
     }
   }
 
@@ -135,9 +137,11 @@
     }
 
     .wdg_img {
-        height: 20vh;
-        height: 20vh;
-        margin-bottom: 5vh;
+        height: 16vh;
+        display: block;
+        margin-bottom: 3vh;
+        margin-left: auto;
+        margin-right: auto;
     }
   }
 
@@ -176,6 +180,7 @@
         letter-spacing: 0.1em;
         padding-top: 5px;
         padding-bottom: 5px;
+        border: none;
     }
 
     .rect_icon {
@@ -238,10 +243,10 @@
 }
 
 
-.country, .city, .company_email, .personal_email {
+.half_width_1 {
     width: 47%;
     margin-right: 6%;
 }
-.zipcode, .state, .company_phone, .personal_phone {
+.half_width {
     width: 47%;
 }
