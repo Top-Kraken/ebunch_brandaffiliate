@@ -150,4 +150,7 @@
     .header {
         display: none
     }
+    #subtitle-img {
+        display: none;
+    }
 }

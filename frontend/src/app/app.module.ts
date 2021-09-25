@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatSelectModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

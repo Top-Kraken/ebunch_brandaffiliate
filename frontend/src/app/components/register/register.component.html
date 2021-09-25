@@ -6,15 +6,15 @@
     <div class="form_blk">
         <img [src]='"../../../assets/progress" +page +".png"' class="prog_1">
 
-        <form class="registeration_form">
+        <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)" class="registeration_form">
             <div *ngIf="page == 1">
                 <mat-form-field>
                     <mat-label>COMPANY NAME</mat-label>
-                    <input matInput>
+                    <input matInput formControlName = "companyName">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>INDUSTRY</mat-label>
-                    <mat-select>
+                    <mat-select formControlName = "industryId">
                         <mat-option *ngFor="let industry of industries" [value]="industry.industryId">
                             {{industry.industryName}}</mat-option>
                     </mat-select>
@@ -23,33 +23,33 @@
                 <div class="details_row">
                     <mat-form-field class="half_width_1">
                         <mat-label>COMPANY EMAIL</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="companyEmail">
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>COMPANY PHONE</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="companyPhone">
                     </mat-form-field>
                 </div>
 
                 <div class="details_row">
                     <mat-form-field class="half_width_1">
                         <mat-label>USER FIRST NAME</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "firstName">
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>USER LAST NAME</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "lastName">
                     </mat-form-field>
                 </div>
 
                 <div class="details_row1">
                     <mat-form-field class="half_width_1">
                         <mat-label>USER EMAIL</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "personalEmail">
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>USER PHONE</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "personalPhone">
                     </mat-form-field>
                 </div>
 
@@ -69,6 +69,8 @@
                         <div class="upload_logotext"> USER PHOTO</div>
                     </div>
                 </div>
+                <div class="uploadtag">Drag image into the box or click to upload a file</div>
+                <div class="mob_uploadtag">Click the boxes to upload a file</div>
                 <div class="btns">
                     <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
                     <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
@@ -82,24 +84,24 @@
 
                 <mat-form-field class="address_line_1">
                     <mat-label>ADDRESS LINE 1</mat-label>
-                    <input matInput>
+                    <input matInput formControlName = "addressLine1">
                 </mat-form-field>
                 <mat-form-field class="address_line_2">
                     <mat-label>ADDRESS LINE 2</mat-label>
-                    <input matInput>
+                    <input matInput formControlName = "addressLine2">
                 </mat-form-field>
 
                 <div>
                     <mat-form-field class="half_width_1">
                         <mat-label>COUNTRY</mat-label>
-                        <mat-select (selectionChange)="oncountrychange($event)">
+                        <mat-select (selectionChange)="oncountrychange($event)" formControlName = "countryId">
                             <mat-option *ngFor="let country of Countries" [value]="country.countryId">
                                 {{country.countryName}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>STATE</mat-label>
-                        <mat-select>
+                        <mat-select formControlName = "stateId">
                             <mat-option *ngFor="let state of states" value="state.stateName">{{state.stateName}}
                             </mat-option>
                         </mat-select>
@@ -108,17 +110,17 @@
                 <div class="details_row1">
                     <mat-form-field class="half_width_1">
                         <mat-label>CITY</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "city">
                     </mat-form-field>
 
                     <mat-form-field class="half_width">
                         <mat-label>ZIP CODE</mat-label>
-                        <input matInput>
+                        <input matInput formControlName = "zipCode">
                     </mat-form-field>
                 </div>
                 <div class="btns">
                     <button type="button" class="back_btn" (click)="navigate_page(2, 'back')">BACK</button>
-                    <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">SUBMIT</button>
+                    <button type="submit" class="next_btn2" (click)="navigate_page(3, 'next')">SUBMIT</button>
                 </div>
             </div>
         </form>
