@@ -1,6 +1,6 @@
 @media (min-width: 1025px) {    
     .register_comp {
-        height: 78vh;
+        height: 79vh;
         display: flex;
         align-items: center;
     }
@@ -9,7 +9,7 @@
         margin-left: auto;
     }
     .person_img {
-        height: 72.6vh;
+        height: 74.6vh;
     }
     .prog_1 {
         width: 29vw;
@@ -19,8 +19,8 @@
         display: block;
     }
     .img_blk {
-        margin-left: 16vw;
-        margin-right: 10vw;
+        margin-left: 13vw;
+        /* margin-right: 10vw; */
     }
     .registeration_form {
         padding-left: 35px;
@@ -30,13 +30,6 @@
     .mat-form-field {
         width: 100%;
         text-align: center;
-    }
-    .country, .city {
-        width: 50%;
-        margin-right: 10%;
-    }
-    .zipcode, .state {
-        width: 40%;
     }
 
     .upload_icon {
@@ -55,7 +48,7 @@
         margin-left: 28%;
         margin-top: 8%;
         padding-top: 5px;
-    padding-bottom: 5px;
+        padding-bottom: 5px;
     }
     .upload_logotext {
         position: absolute;
@@ -66,6 +59,13 @@
 
     .rect_icon {
         height: 26vh;
+    }
+    .wdg_img {
+        width: 54vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4vh;
     }
   }
 
@@ -88,6 +88,17 @@
         left: 38%;
         width: 25%;
         top: 69%;
+    }
+    .wdg_img {
+        height: 22vh;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        margin-bottom: 3vh;
+        display: block;
+    }
+    .details_row1 {
+        margin-bottom: 3vh;
     }
   }
 
@@ -119,6 +130,15 @@
         width: 25%;
         top: 62%;
     }
+    .details_row1 {
+        margin-bottom: 5%;
+    }
+
+    .wdg_img {
+        height: 20vh;
+        height: 20vh;
+        margin-bottom: 5vh;
+    }
   }
 
   /* @media (min-width: 280px) and (max-width: 767px) { */
@@ -146,13 +166,6 @@
         /* text-align: center; */
         display: block;
     }
-    .country, .city {
-        width: 50%;
-        margin-right: 10%;
-    }
-    .zipcode, .state {
-        width: 40%;
-    }
     .next_btn {
         margin-left: 22%;
         width: 59%;
@@ -167,6 +180,14 @@
 
     .rect_icon {
         height: 24vh;
+    }
+
+    .details_blk{
+        align-items: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
     }
   }
 
@@ -203,7 +224,7 @@
     letter-spacing: 0.1em;
     width: 51%;
     padding-top: 5px;
-padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 .back_btn {
@@ -214,4 +235,13 @@ padding-bottom: 5px;
     letter-spacing: 0.1em;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+
+.country, .city, .company_email, .personal_email {
+    width: 47%;
+    margin-right: 6%;
+}
+.zipcode, .state, .company_phone, .personal_phone {
+    width: 47%;
 }

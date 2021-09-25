@@ -1,10 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
+import {style, state, animate, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({opacity: 1})),
+      transition(':enter', [   // :enter is alias to 'void => *'
+        style({opacity:0}),
+        animate(1000, style({opacity:1})) 
+      ]),
+      transition(':leave', [   // :leave is alias to '* => void'
+        animate(500, style({opacity:0})) 
+      ])
+    ])
+  ]
 })
 export class RegisterComponent implements OnInit {
 
