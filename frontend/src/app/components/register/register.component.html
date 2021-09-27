@@ -1,13 +1,13 @@
 <app-header></app-header>
 <div class="register_comp">
-    <div class="img_blk" [@fadeInOut]="'in'"  *ngIf="page <= 3">
+    <div class="img_blk" [@fadeInOut]="'in'" *ngIf="page <= 3">
         <img [src]='"../../../assets/register" +page+ ".png"' class="person_img">
     </div>
     <div class="form_blk">
         <img [src]='"../../../assets/progress" +page +".png"' *ngIf="page <= 3" class="prog_1">
 
         <!-- <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)" -->
-            <form [formGroup]="registrationForm"  class="registeration_form">
+        <form [formGroup]="registrationForm" class="registeration_form">
             <!-- class="registeration_form"> -->
             <div *ngIf="page == 1">
                 <mat-form-field>
@@ -149,7 +149,15 @@
 
                 <div class="btns">
                     <button type="button" class="back_btn" (click)="navigate_page(3, 'back')">BACK</button>
-                    <button type="button" class="next_btn2" (click)="navigate_page(4, 'next')">SUBMIT</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(5, 'next')">SUBMIT</button>
+                </div>
+            </div>
+            <div *ngIf="page == 5" style="text-align: center;">
+                <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
+                <div class="Verification_heading">WELCOME</div>
+                <div style="margin-bottom: 5vh;">Your account is currently being reviewed.<br> Email us at test@gmail.com</div>
+                <div class="btns">
+                    <button type="button" class="back_btn" (click)="navigate_page(4, 'back')">BACK</button>
                 </div>
             </div>
         </form>
