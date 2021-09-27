@@ -1,20 +1,22 @@
 <app-header></app-header>
 <div class="register_comp">
-    <div class="img_blk" [@fadeInOut]= "'in'">
+    <div class="img_blk" [@fadeInOut]="'in'"  *ngIf="page <= 3">
         <img [src]='"../../../assets/register" +page+ ".png"' class="person_img">
     </div>
     <div class="form_blk">
-        <img [src]='"../../../assets/progress" +page +".png"' class="prog_1">
+        <img [src]='"../../../assets/progress" +page +".png"' *ngIf="page <= 3" class="prog_1">
 
-        <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)" class="registeration_form">
+        <!-- <form [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)" -->
+            <form [formGroup]="registrationForm"  class="registeration_form">
+            <!-- class="registeration_form"> -->
             <div *ngIf="page == 1">
                 <mat-form-field>
                     <mat-label>COMPANY NAME</mat-label>
-                    <input matInput formControlName = "companyName">
+                    <input matInput formControlName="companyName">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>INDUSTRY</mat-label>
-                    <mat-select formControlName = "industryId">
+                    <mat-select formControlName="industryId">
                         <mat-option *ngFor="let industry of industries" [value]="industry.industryId">
                             {{industry.industryName}}</mat-option>
                     </mat-select>
@@ -34,22 +36,22 @@
                 <div class="details_row">
                     <mat-form-field class="half_width_1">
                         <mat-label>USER FIRST NAME</mat-label>
-                        <input matInput formControlName = "firstName">
+                        <input matInput formControlName="firstName">
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>USER LAST NAME</mat-label>
-                        <input matInput formControlName = "lastName">
+                        <input matInput formControlName="lastName">
                     </mat-form-field>
                 </div>
 
                 <div class="details_row1">
                     <mat-form-field class="half_width_1">
                         <mat-label>USER EMAIL</mat-label>
-                        <input matInput formControlName = "personalEmail">
+                        <input matInput formControlName="personalEmail">
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>USER PHONE</mat-label>
-                        <input matInput formControlName = "personalPhone">
+                        <input matInput formControlName="personalPhone">
                     </mat-form-field>
                 </div>
 
@@ -58,15 +60,26 @@
             </div>
             <div *ngIf="page == 2">
                 <div class="uploads">
-                    <div class="upload1">
-                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
-                        <img src="../../../assets/Upload.PNG" class="upload_icon">
-                        <div class="upload_logotext"> COMPANY LOGO</div>
+                    <div class="upload1" draggable="true">
+                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon" (click)="logofile.click()">
+                        <img src="../../../assets/Upload.PNG" class="upload_icon" (click)="logofile.click()">
+                        <div class="upload_logotext" *ngIf="!logoFileName" (click)="logofile.click()"> COMPANY LOGO
+                        </div>
+                        <div class="upload_logotext" *ngIf="logoFileName">{{logoFileName}}
+                            <mat-icon class="cancel" (click)="logoFileName = null">cancel</mat-icon>
+                        </div>
+                        <input type="file" #logofile [multiple]="false" (change)="onFileChange($event, 'companyLogo')"
+                            style="display:none" />
                     </div>
-                    <div class="upload">
-                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon">
-                        <img src="../../../assets/Upload.PNG" class="upload_icon">
-                        <div class="upload_logotext"> USER PHOTO</div>
+                    <div class="upload" draggable="true">
+                        <img src="../../../assets/Rectangle 5 copy.PNG" class="rect_icon" (click)="userfile.click()">
+                        <img src="../../../assets/Upload.PNG" class="upload_icon" (click)="userfile.click()">
+                        <div class="upload_logotext" *ngIf="!userFileName" (click)="userfile.click()"> USER PHOTO</div>
+                        <div class="upload_logotext" *ngIf="userFileName">{{userFileName}}
+                            <mat-icon class="cancel" (click)="userFileName = null">cancel</mat-icon>
+                        </div>
+                        <input type="file" #userfile [multiple]="false" (change)="onFileChange($event, 'userPhoto')"
+                            style="display:none" />
                     </div>
                 </div>
                 <div class="uploadtag">Drag image into the box or click to upload a file</div>
@@ -75,6 +88,8 @@
                     <button type="button" class="back_btn" (click)="navigate_page(1, 'back')">BACK</button>
                     <button type="button" class="next_btn2" (click)="navigate_page(3, 'next')">NEXT</button>
                 </div>
+                <!-- <label >File</label> -->
+                <input type="file" class="file" id="getCompanyfile" name="getCompanyfile">
             </div>
 
             <div *ngIf="page == 3" class="details_blk">
@@ -84,25 +99,25 @@
 
                 <mat-form-field class="address_line_1">
                     <mat-label>ADDRESS LINE 1</mat-label>
-                    <input matInput formControlName = "addressLine1">
+                    <input matInput formControlName="addressLine1">
                 </mat-form-field>
                 <mat-form-field class="address_line_2">
                     <mat-label>ADDRESS LINE 2</mat-label>
-                    <input matInput formControlName = "addressLine2">
+                    <input matInput formControlName="addressLine2">
                 </mat-form-field>
 
                 <div>
                     <mat-form-field class="half_width_1">
                         <mat-label>COUNTRY</mat-label>
-                        <mat-select (selectionChange)="oncountrychange($event)" formControlName = "countryId">
+                        <mat-select (selectionChange)="oncountrychange($event)" formControlName="countryId">
                             <mat-option *ngFor="let country of Countries" [value]="country.countryId">
                                 {{country.countryName}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                     <mat-form-field class="half_width">
                         <mat-label>STATE</mat-label>
-                        <mat-select formControlName = "stateId">
-                            <mat-option *ngFor="let state of states" value="state.stateName">{{state.stateName}}
+                        <mat-select formControlName="stateId">
+                            <mat-option *ngFor="let state of states" [value]="state.stateId">{{state.stateName}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -110,20 +125,36 @@
                 <div class="details_row1">
                     <mat-form-field class="half_width_1">
                         <mat-label>CITY</mat-label>
-                        <input matInput formControlName = "city">
+                        <input matInput formControlName="city">
                     </mat-form-field>
 
                     <mat-form-field class="half_width">
                         <mat-label>ZIP CODE</mat-label>
-                        <input matInput formControlName = "zipCode">
+                        <input matInput formControlName="zipCode">
                     </mat-form-field>
                 </div>
                 <div class="btns">
                     <button type="button" class="back_btn" (click)="navigate_page(2, 'back')">BACK</button>
-                    <button type="submit" class="next_btn2" (click)="navigate_page(3, 'next')">SUBMIT</button>
+                    <button type="submit" class="next_btn2" (click)="navigate_page(4, 'next')">SUBMIT</button>
+                </div>
+            </div>
+            <div *ngIf="page == 4" style="text-align: center;">
+                <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
+                <div class="Verification_heading">VERIFY YOUR PHONE NUMBER</div>
+                <div style="margin-bottom: 4vh;">Mock data message</div>
+                <mat-form-field style="margin-bottom: 6vh;">
+                    <mat-label>ENTER CODE</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <div class="btns">
+                    <button type="button" class="back_btn" (click)="navigate_page(3, 'back')">BACK</button>
+                    <button type="button" class="next_btn2" (click)="navigate_page(4, 'next')">SUBMIT</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
 <app-footer></app-footer>
+<!-- 
+<img [src]="imageURL"  *ngIf="imageURL"> -->

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
 import { style, state, animate, transition, trigger } from '@angular/animations';
 import { FormGroup, FormControl } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -23,15 +24,19 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   Countries: any;
-  states: any;
+  states: Array<any> = [];
   industries: any;
   registrationForm: any;
-  constructor(private configServive: ConfigService) { }
+  dragAreaClass: any;
+  logoFileName: any;
+  userFileName: any;
+  imageURL: any; logoFile: any; userFile: any;
+
+  constructor(private configService: ConfigService, private registerService: RegisterService) { }
   page: any = 1;
   ngOnInit(): void {
     this.getAllCountries();
     this.getIndustries();
-
     this.registrationForm = new FormGroup({
       companyName: new FormControl(""),
       firstName: new FormControl(""),
@@ -54,7 +59,7 @@ export class RegisterComponent implements OnInit {
   oncountrychange(event: any) {
     console.log(event);
     this.states = [];
-    this.configServive.getStates_with_CountryCode(event.value).subscribe((res: any) => {
+    this.configService.getStates_with_CountryCode(event.value).subscribe((res: any) => {
       let stateData = res;
       this.states = stateData.response.stateList;
       console.log(this.states);
@@ -66,7 +71,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getAllCountries() {
-    this.configServive.getCountryCode().subscribe((res: any) => {
+    this.configService.getCountryCode().subscribe((res: any) => {
       let countryCodesdata = res;
       this.Countries = countryCodesdata.response.countryList;
       console.log(this.Countries);
@@ -76,7 +81,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getIndustries() {
-    this.configServive.getAllIndustries().subscribe((res: any) => {
+    this.configService.getAllIndustries().subscribe((res: any) => {
       console.log(res)
       let industryData = res;
       this.industries = industryData.response.industryList;
@@ -86,8 +91,42 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onFormSubmit(formData: any) {
-    console.log(formData);
+  onFormSubmit(Data: any) {
+    let formData = new FormData();
+    formData.append('data', JSON.stringify(this.registrationForm.value));
+    console.log(JSON.stringify(this.registrationForm.value))
+    // formData.append('userPhoto', this.userFile, this.userFileName);
+    // formData.append('companyLogo', this.logoFile, this.logoFileName);
+    // this.registerService.registerUser(formData).subscribe((res: any) => {
+    //   console.log(res);
+    // }, (err) => {
+    //   console.log(err);
+    // })
+  }
+
+  onFileChange(event: any, type: string) {
+    if (type == 'companyLogo') {
+      this.logoFile = event.target.files[0];
+      this.logoFileName = event.target.files[0].name;
+    } else if (type == 'userPhoto') {
+      this.userFile = event.target.files[0];
+      this.userFileName = event.target.files[0].name;
+    }
+    // const file = event.target.files[0];
+
+    // var reader = new FileReader();
+    // reader.readAsDataURL(event.target.files[0]);
+    // reader.onload = (_event) => {
+    //   console.log(reader.result)
+    //   if (type == 'companyLogo') this.logoFile = reader.result;
+    //   else if (type == 'userPhoto') this.userFile = reader.result;
+    //   this.imageURL = reader.result;
+    // }
+  }
+
+  clearfiles(type: string) {
+    if (type == 'companyLogo') this.logoFileName = null;
+    else if (type == 'userPhoto') this.userFileName = null;
   }
 }
 
@@ -95,7 +134,3 @@ export class RegisterComponent implements OnInit {
 // {
 //   "mapLocations":[{"lat":"12.11","lng":"12.13"},{"lat":"12.45","lng":"12.4643"}],
 //   }
-
-// data
-// userPhoto
-// companyLogo

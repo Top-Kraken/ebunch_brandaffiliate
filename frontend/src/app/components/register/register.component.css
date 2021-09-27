@@ -224,6 +224,10 @@
 .upload {
     position: relative;
 }
+/* div.upload :hover {
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+} */
 .upload1 {
     position: relative;
     margin-bottom: 4%;
@@ -270,4 +274,29 @@
 }
 .half_width {
     width: 47%;
+}
+#getCompanyfile {
+    position: absolute;    
+}
+.file {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+.cancel {
+    z-index: 12;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.mobile_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 14vh;
+    margin-bottom: 11vh;
+}
+.Verification_heading {
+    font-weight: 500;
+    margin-bottom: 1vh;
 }
