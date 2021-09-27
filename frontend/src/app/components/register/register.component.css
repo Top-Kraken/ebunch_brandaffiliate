@@ -52,7 +52,7 @@
         margin-bottom: 14%;
         text-align: center;
     }
-    .mob_uploadtag{
+    .mob_uploadtag, .mob_person{
         display: none;
     }
     .next_btn {
@@ -86,6 +86,23 @@
         margin-right: auto;
         margin-bottom: 1vh;
     }
+
+    .mobile_logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 14vh;
+        margin-bottom: 11vh;
+    }
+    .verify_tag {
+        margin-bottom: 4vh;
+    }
+    .welcome_tag {
+        margin-bottom: 5vh;
+    }
+    .verify_input {
+        margin-bottom: 6vh;
+    }
   }
 
 
@@ -118,6 +135,13 @@
     }
     .details_row1 {
         margin-bottom: 3vh;
+    }
+    .mob_person{
+        height: 48vh;
+        margin-bottom: 5vh;
+    }
+    .welcome_tag {
+        margin-bottom: 4vh;
     }
   }
 
@@ -160,11 +184,18 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .mob_person {
+        height: 43vh;
+        margin-bottom: 2vh;
+    }
+    .welcome_tag {
+        margin-bottom: 3vh;
+    }
   }
 
   /* @media (min-width: 280px) and (max-width: 767px) { */
     @media (min-width: 280px) and (max-width: 1024px) {
-    .img_blk , .uploadtag {
+    .img_blk , .uploadtag, .mobile_logo {
         display: none;
     }
     .mob_uploadtag {
@@ -289,13 +320,6 @@
     cursor: pointer;
 }
 
-.mobile_logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 14vh;
-    margin-bottom: 11vh;
-}
 .Verification_heading {
     font-weight: 500;
     margin-bottom: 1vh;

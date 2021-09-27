@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [InputData]="HeaderData"></app-header>
 <div class="register_comp">
     <div class="img_blk" [@fadeInOut]="'in'" *ngIf="page <= 3">
         <img [src]='"../../../assets/register" +page+ ".png"' class="person_img">
@@ -138,29 +138,32 @@
                     <button type="submit" class="next_btn2" (click)="navigate_page(4, 'next')">SUBMIT</button>
                 </div>
             </div>
-            <div *ngIf="page == 4" style="text-align: center;">
-                <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
-                <div class="Verification_heading">VERIFY YOUR PHONE NUMBER</div>
-                <div style="margin-bottom: 4vh;">Mock data message</div>
-                <mat-form-field style="margin-bottom: 6vh;">
-                    <mat-label>ENTER CODE</mat-label>
-                    <input matInput>
-                </mat-form-field>
-
-                <div class="btns">
-                    <button type="button" class="back_btn" (click)="navigate_page(3, 'back')">BACK</button>
-                    <button type="button" class="next_btn2" (click)="navigate_page(5, 'next')">SUBMIT</button>
-                </div>
-            </div>
-            <div *ngIf="page == 5" style="text-align: center;">
-                <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
-                <div class="Verification_heading">WELCOME</div>
-                <div style="margin-bottom: 5vh;">Your account is currently being reviewed.<br> Email us at test@gmail.com</div>
-                <div class="btns">
-                    <button type="button" class="back_btn" (click)="navigate_page(4, 'back')">BACK</button>
-                </div>
-            </div>
         </form>
+
+        <div *ngIf="page == 4" style="text-align: center;">
+            <img src="../../../assets/mobile_person1.png" class="mob_person">
+            <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
+            <div class="Verification_heading">VERIFY YOUR PHONE NUMBER</div>
+            <div class="verify_tag">Mock data message</div>
+            <mat-form-field class="verify_input">
+                <mat-label>ENTER CODE</mat-label>
+                <input matInput>
+            </mat-form-field>
+            
+            <div class="btns">
+                <button type="button" class="back_btn" (click)="navigate_page(3, 'back')">BACK</button>
+                <button type="button" class="next_btn2" (click)="navigate_page(5, 'next')">SUBMIT</button>
+            </div>
+        </div>
+        <div *ngIf="page == 5" style="text-align: center;">
+            <img src="../../../assets/mobile_person2.png" class="mob_person">
+            <img class="mobile_logo" src="../../../assets/Main Logo-03.PNG" alt="">
+            <div class="Verification_heading">WELCOME</div>
+            <div class="welcome_tag">Your account is currently being reviewed.<br> Email us at test@gmail.com</div>
+            <div class="btns">
+                <button type="button" class="back_btn" (click)="navigate_page(4, 'back')">BACK</button>
+            </div>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>

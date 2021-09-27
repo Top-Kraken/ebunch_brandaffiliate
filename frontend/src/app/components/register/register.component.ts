@@ -31,7 +31,10 @@ export class RegisterComponent implements OnInit {
   logoFileName: any;
   userFileName: any;
   imageURL: any; logoFile: any; userFile: any;
-
+  HeaderData = {
+    showRegImg: true,
+    showLogin_btn: true
+  }
   constructor(private configService: ConfigService, private registerService: RegisterService) { }
   page: any = 1;
   ngOnInit(): void {

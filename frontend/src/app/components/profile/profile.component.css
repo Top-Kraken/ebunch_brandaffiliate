@@ -1,0 +1,86 @@
+@media (min-width: 1025px) {    
+    .profile_comp {
+        height: 79vh;
+        display: flex;
+        align-items: center;
+    }
+    .img_blk {
+        margin-left: 13vw;
+        /* margin-right: 10vw; */
+    }
+    .person_img {
+        height: 74.6vh;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) { 
+    .profile_comp {
+        height: 76.5vh;
+        display: flex;
+        align-items: center;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 280px) and (max-width: 767px) {
+    .profile_comp {
+        height: 76.4vh;
+        display: flex;
+        align-items: center;
+    }  
+    .img_blk , .uploadtag {
+        display: none;
+    }
+    .form_blk {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+}
+
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+}
+
+.submit_btn {
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    /* margin-right: auto; */
+    margin-left: 7%;
+    letter-spacing: 0.1em;
+    width: 51%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.mat-form-field {
+    width: 70%;
+    text-align: center;
+}
+
+.welcome {
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    color: #a854a2;
+    margin-bottom: 4vh;
+}
+
