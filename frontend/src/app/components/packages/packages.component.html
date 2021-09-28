@@ -1,0 +1,23 @@
+<app-header [InputData]="HeaderData"></app-header>
+<div class="package_comp">
+    <!-- <img class="backgroung_img" src="../../../assets/background_img .png"> -->
+    <div class="choose_heading">CHOOSE A PACKAGE</div>
+    <div class="packages">
+        <div class="package" *ngFor="let package of packages; let i = index">
+            <div class="package_name">
+                PACKAGE {{i}}
+            </div>
+            <div class="package_amount">
+                $ 100
+            </div>
+            <div class="package_duration">PER MONTH</div>
+            <hr>
+            <div class="package_description">Test Content of the package. Test Content of the package. Test Content of
+                the package</div>
+        </div>
+    </div>
+    <div class="btns"><button class="next">NEXT</button></div>
+    <div class="package_content">Test Content of the package. Test Content of the package. Test Content of
+        the package</div>
+</div>
+<app-footer></app-footer>
