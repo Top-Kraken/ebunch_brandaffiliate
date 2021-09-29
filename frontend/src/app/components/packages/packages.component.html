@@ -4,20 +4,22 @@
     <div class="choose_heading">CHOOSE A PACKAGE</div>
     <div class="packages">
         <div class="package" *ngFor="let package of packages; let i = index">
-            <div class="package_name">
-                PACKAGE {{i}}
+            <div class="package_data">
+                <div class="package_name">
+                    PACKAGE{{i}}
+                </div>
+                <div class="package_amount">
+                    $ 100
+                </div>
+                <div class="package_duration">PER MONTH</div>
             </div>
-            <div class="package_amount">
-                $ 100
-            </div>
-            <div class="package_duration">PER MONTH</div>
-            <hr>
-            <div class="package_description">Test Content of the package. Test Content of the package. Test Content of
-                the package</div>
+            <hr class="horizantal-line">
+            <div class="vertical-line" style="height: 11vh;"></div>
+            <div class="package_description">Test Content of the package. Test Content ......</div>
         </div>
     </div>
     <div class="btns"><button class="next">NEXT</button></div>
     <div class="package_content">Test Content of the package. Test Content of the package. Test Content of
         the package</div>
 </div>
-<app-footer></app-footer>
+<app-footer class="foot"></app-footer>
