@@ -1,0 +1,37 @@
+.mat-sidenav-container { 
+    background-color: #efefef;
+    height: 93vh;
+    /* height: 100%; */
+    /* position: absolute; */
+ }
+.doc-layout-body{
+    background-color: transparent;
+    height: 93vh;
+}
+#header-title {
+    box-shadow: 0 0px 4px 0 rgba(32,33,36,0.28);
+    height: 7vh;
+}
+.title-block {
+    height: 7vh;
+    position: relative;
+    z-index: 2
+    /* background-color: #0840AC; */
+}
+.mat-sidenav {
+    background-color: #000000;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    height: 100%;
+}
+
+@media (min-width: 1024px){
+    .mob_sidenav {
+        display: none;
+    }
+}
+@media (min-width: 280px) and (max-width: 1023px) {
+    .desktop_sidenav {
+        display: none;
+    }
+}

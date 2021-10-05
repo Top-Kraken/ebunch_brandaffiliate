@@ -19,7 +19,7 @@ export class RegisterService {
         let headers = new HttpHeaders();
         headers = headers.append('Content-Type', 'multipart/form-data');
         // headers = headers.append('enctype', 'multipart/form-data');
-        return this.httpClient.post(environment.API_ENDPOINT + '/dealer/registerDealer', register_data, HttpUploadOptions)
+        return this.httpClient.post(environment.API_ENDPOINT + '/dealer/registerDealer', register_data, {headers: headers})
     }
 
 }

@@ -17,6 +17,18 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PackagesComponent } from './components/packages/packages.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LeftMenuComponent } from './components/left-menu/left-menu.component';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { SidenavService } from './services/sidenav.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatCardModule } from '@angular/material/card';
+import { ChartsModule } from 'ng2-charts';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,7 +37,10 @@ import { PackagesComponent } from './components/packages/packages.component';
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    PackagesComponent
+    PackagesComponent,
+    LayoutComponent,
+    LeftMenuComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +53,15 @@ import { PackagesComponent } from './components/packages/packages.component';
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatListModule,
+    MatCardModule,
+    ChartsModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [SidenavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

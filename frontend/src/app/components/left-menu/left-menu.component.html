@@ -1,0 +1,22 @@
+<div class="sidenav_container" [@onMobileSideNavChange]="sideNavState ? 'open' : 'close'" id="sampletrial">
+  <span class="spacer"></span>
+  <div fxLayout="row" fxLayoutAlign="end" style="padding: 0px 10px;">
+    <button mat-icon-button (click)="onSinenavToggle()" id="open_close">
+      <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
+      <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
+    <div>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.link]"
+          routerLinkActive="active-list-item" appNavDropdownToggle>
+          <!-- <mat-icon style="padding-right:5px;">{{}}</mat-icon> -->
+          <img [src]="menuItem.icon" class="icon_img">
+          <span [@animateText]="linkText ? 'show' : 'hide'"
+            style="padding-left:10px;padding-top: 5px">{{menuItem.title}} </span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </div>
+</div>

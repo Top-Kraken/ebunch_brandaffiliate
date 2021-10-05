@@ -33,7 +33,8 @@ export class RegisterComponent implements OnInit {
   imageURL: any; logoFile: any; userFile: any;
   HeaderData = {
     showRegImg: true,
-    showLogin_btn: true
+    showLogin_btn: true,
+    isLoggedin: false
   }
   constructor(private configService: ConfigService, private registerService: RegisterService) { }
   page: any = 1;
@@ -41,21 +42,21 @@ export class RegisterComponent implements OnInit {
     this.getAllCountries();
     this.getIndustries();
     this.registrationForm = new FormGroup({
-      companyName: new FormControl(""),
-      firstName: new FormControl(""),
-      lastName: new FormControl(),
-      industryId: new FormControl(),
-      addressLine1: new FormControl(""),
-      addressLine2: new FormControl(""),
-      city: new FormControl(""),
-      stateId: new FormControl(),
-      countryId: new FormControl(),
-      zipCode: new FormControl(""),
+      companyName: new FormControl("Ebunch"),
+      firstName: new FormControl("Rakesh"),
+      lastName: new FormControl("Bhandarkar"),
+      industryId: new FormControl(1),
+      addressLine1: new FormControl("Ebunch"),
+      addressLine2: new FormControl("777 Hornby St Suite 600"),
+      city: new FormControl("Vancouver"),
+      stateId: new FormControl(55),
+      countryId: new FormControl(2),
+      zipCode: new FormControl("BC V6Z 1S4"),
       mapLocations: new FormControl(""),
-      companyEmail: new FormControl(""),
-      companyPhone: new FormControl(""),
-      personalEmail: new FormControl(""),
-      personalPhone: new FormControl("")
+      companyEmail: new FormControl("paul@ebunch.ca"),
+      companyPhone: new FormControl("1234567890"),
+      personalEmail: new FormControl("rakesh.bhandarkar@gmail.com"),
+      personalPhone: new FormControl("9844038037")
     });
   }
 
@@ -94,17 +95,17 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onFormSubmit(Data: any) {
+  onFormSubmit() {
     let formData = new FormData();
     formData.append('data', JSON.stringify(this.registrationForm.value));
     console.log(JSON.stringify(this.registrationForm.value))
     // formData.append('userPhoto', this.userFile, this.userFileName);
     // formData.append('companyLogo', this.logoFile, this.logoFileName);
-    // this.registerService.registerUser(formData).subscribe((res: any) => {
-    //   console.log(res);
-    // }, (err) => {
-    //   console.log(err);
-    // })
+    this.registerService.registerUser(formData).subscribe((res: any) => {
+      console.log(res);
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   onFileChange(event: any, type: string) {

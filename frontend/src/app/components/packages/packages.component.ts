@@ -9,7 +9,8 @@ export class PackagesComponent implements OnInit {
 
   HeaderData = {
     showRegImg: false,
-    showLogin_btn: false
+    showLogin_btn: false,
+    isLoggedin: false
   }
   packages = ['package1', 'package2', 'package3']
   constructor() { }

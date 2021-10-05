@@ -57,7 +57,7 @@
 }
 
 @media (min-width: 1025px) {
-    .mobile_header, .mob_reg_header {
+    .mobile_header, .mob_reg_header, .mob_sidenav, .mobile_login_logo {
         display: none;
     }
     .header {
@@ -68,13 +68,45 @@
         display: flex;
         align-items: center;
     }
+    .login_header {
+        background-color: #ffffff;
+        margin: 0px;
+        height: 7vh;
+        margin-bottom: 2vh;
+        display: flex;
+        align-items: center;
+    }
     #logo-img {
         margin-left: 5.5vw;
         height: 3vh;
     }
+    #login_logo-img {
+        height: 2.7vh;
+    }
+
+    .login_logo {
+        height: 5vh; 
+        margin-left: 2vw;
+        margin-right: 0.8vw;
+    }
     #subtitle-img {
         margin-left: 2%;
         height: 2vh;
+    }
+    #login_subtitle-img {
+        margin-left: 2%;
+        height: 1.8vh;
+    }
+    .contact_details {
+        display: flex;
+        width: 56%;
+        gap: 1vw;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .contact {
+        text-decoration: underline;
+        color: #ce59a0;
     }
     .reg_img {
         height: 1.4vh;
@@ -96,6 +128,7 @@
         letter-spacing: 0.1em;
     }
 }
+
 @media (min-width: 767px) and (max-width: 1023px) {
     .header {
         background-color: #efefef;
@@ -123,6 +156,7 @@
         margin-left: 5.5vw;
         height: 2vh;
     }
+    
     .mobile_header {
         display: none;
     }
@@ -152,5 +186,25 @@
     }
     #subtitle-img {
         display: none;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 1023px) {
+    .mob_sidenav {
+        background-color: white;
+        border: none;
+    }
+    .title, .contact_details {
+        display: none;
+    }
+    .login_header{
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        gap: 37vw;
+        margin-left: 3vw;
+    }
+    .mobile_login_logo {
+        height: 5vh;
     }
 }

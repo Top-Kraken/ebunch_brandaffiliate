@@ -1,0 +1,30 @@
+.sidenav_container {
+  min-width: 60px; 
+  height: calc(100vh - 200px);
+}
+  
+::ng-deep .mat-nav-list .mat-list-item {
+  margin-top: 13px;
+  height: 7vh!important;
+  color: #ffffff;
+}
+.active-list-item {
+  color: #ff8a33 !important;
+}
+.icon_img {
+  height: 21px;
+  width: 19px;
+}
+#open_close {
+  border: none;
+  background-color: black;
+  border-radius: 39%;
+  color: white;
+  margin-top: 10%;
+}
+
+@media (min-width: 280px) and (max-width: 1023px) {
+  #open_close {
+    display: none;
+  }
+}
