@@ -3,6 +3,7 @@ import { ConfigService } from 'src/app/services/config.service';
 import { style, state, animate, transition, trigger } from '@angular/animations';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -30,33 +31,35 @@ export class RegisterComponent implements OnInit {
   dragAreaClass: any;
   logoFileName: any;
   userFileName: any;
+  phoneNumber: any;
+  phoneOTP: any;
   imageURL: any; logoFile: any; userFile: any;
   HeaderData = {
     showRegImg: true,
     showLogin_btn: true,
     isLoggedin: false
   }
-  constructor(private configService: ConfigService, private registerService: RegisterService) { }
+  constructor(private configService: ConfigService, private registerService: RegisterService, private toastr: ToastrService) { }
   page: any = 1;
   ngOnInit(): void {
     this.getAllCountries();
     this.getIndustries();
     this.registrationForm = new FormGroup({
-      companyName: new FormControl("Ebunch"),
-      firstName: new FormControl("Rakesh"),
-      lastName: new FormControl("Bhandarkar"),
-      industryId: new FormControl(1),
-      addressLine1: new FormControl("Ebunch"),
-      addressLine2: new FormControl("777 Hornby St Suite 600"),
-      city: new FormControl("Vancouver"),
-      stateId: new FormControl(55),
-      countryId: new FormControl(2),
-      zipCode: new FormControl("BC V6Z 1S4"),
+      companyName: new FormControl(""),
+      firstName: new FormControl(""),
+      lastName: new FormControl(""),
+      industryId: new FormControl(),
+      addressLine1: new FormControl(""),
+      addressLine2: new FormControl(""),
+      city: new FormControl(""),
+      stateId: new FormControl(),
+      countryId: new FormControl(),
+      zipCode: new FormControl(""),
       mapLocations: new FormControl(""),
-      companyEmail: new FormControl("paul@ebunch.ca"),
-      companyPhone: new FormControl("1234567890"),
-      personalEmail: new FormControl("rakesh.bhandarkar@gmail.com"),
-      personalPhone: new FormControl("9844038037")
+      companyEmail: new FormControl(""),
+      companyPhone: new FormControl(""),
+      personalEmail: new FormControl(""),
+      personalPhone: new FormControl("")
     });
   }
 
@@ -99,10 +102,15 @@ export class RegisterComponent implements OnInit {
     let formData = new FormData();
     formData.append('data', JSON.stringify(this.registrationForm.value));
     console.log(JSON.stringify(this.registrationForm.value))
-    // formData.append('userPhoto', this.userFile, this.userFileName);
-    // formData.append('companyLogo', this.logoFile, this.logoFileName);
+    formData.append('userPhoto', this.userFile, this.userFileName);
+    formData.append('companyLogo', this.logoFile, this.logoFileName);
     this.registerService.registerUser(formData).subscribe((res: any) => {
       console.log(res);
+      if (res.responseCode == -1) this.toastr.error(res.errorMsg, 'Error');
+      else if (res.responseCode == 0) {
+        this.toastr.success('Registered successfully, Please verify Mobile number', 'Success');
+        this.navigate_page(4, 'next');
+      }
     }, (err) => {
       console.log(err);
     })
@@ -116,21 +124,29 @@ export class RegisterComponent implements OnInit {
       this.userFile = event.target.files[0];
       this.userFileName = event.target.files[0].name;
     }
-    // const file = event.target.files[0];
-
-    // var reader = new FileReader();
-    // reader.readAsDataURL(event.target.files[0]);
-    // reader.onload = (_event) => {
-    //   console.log(reader.result)
-    //   if (type == 'companyLogo') this.logoFile = reader.result;
-    //   else if (type == 'userPhoto') this.userFile = reader.result;
-    //   this.imageURL = reader.result;
-    // }
   }
 
   clearfiles(type: string) {
     if (type == 'companyLogo') this.logoFileName = null;
     else if (type == 'userPhoto') this.userFileName = null;
+  }
+
+  verifyDealerRegOtp(phoneOTP: string) {
+    if(!phoneOTP) return;
+    let phone_data = {
+      "personalPhone": this.registrationForm.value.personalPhone,
+      "otpNumber": phoneOTP
+    }
+    this.registerService.verifyDealerOtp(phone_data).subscribe((res: any) => {
+      console.log(res);
+      if (res.responseCode == -1) this.toastr.error(res.errorMsg, 'Error');
+      else if (res.responseCode == 0) {
+        this.toastr.success('Registered successfully', 'Success');
+        this.navigate_page(5, 'next');
+      }
+    }, (err) => {
+      console.log(err);
+    })
   }
 }
 

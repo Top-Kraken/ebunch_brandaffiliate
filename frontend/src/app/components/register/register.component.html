@@ -147,12 +147,13 @@
             <div class="verify_tag">Mock data message</div>
             <mat-form-field class="verify_input">
                 <mat-label>ENTER CODE</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="phoneOTP">
             </mat-form-field>
             
             <div class="btns">
                 <button type="button" class="back_btn" (click)="navigate_page(3, 'back')">BACK</button>
-                <button type="button" class="next_btn2" (click)="navigate_page(5, 'next')">SUBMIT</button>
+                <!-- <button type="button" class="next_btn2" (click)="navigate_page(5, 'next')">SUBMIT</button> -->
+                <button type="button" class="next_btn2" (click)="verifyDealerRegOtp(phoneOTP)">SUBMIT</button>
             </div>
         </div>
         <div *ngIf="page == 5" style="text-align: center;">

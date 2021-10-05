@@ -29,6 +29,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
 import { ChartsModule } from 'ng2-charts';
 import { MatTableModule } from '@angular/material/table';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatCardModule,
     ChartsModule,
-    MatTableModule
+    MatTableModule,
+    ToastrModule.forRoot(),
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent]

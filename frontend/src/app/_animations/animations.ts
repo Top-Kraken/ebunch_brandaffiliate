@@ -30,7 +30,7 @@ export const onMobileSideNavChange = trigger('onMobileSideNavChange', [
   ),
   state('open',
     style({
-      'min-width': '300px'
+      'min-width': '200px'
       // 'min-height': '544px'
     })
   ),

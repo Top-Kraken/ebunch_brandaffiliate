@@ -15,11 +15,16 @@ export class RegisterService {
         console.log(register_data.get('data'))
         const HttpUploadOptions = {
             headers: new HttpHeaders({ "Accept": "application/json" })
-          }
-        let headers = new HttpHeaders();
-        headers = headers.append('Content-Type', 'multipart/form-data');
-        // headers = headers.append('enctype', 'multipart/form-data');
-        return this.httpClient.post(environment.API_ENDPOINT + '/dealer/registerDealer', register_data, {headers: headers})
+        }
+        return this.httpClient.post(environment.API_ENDPOINT + '/dealer/registerDealer', register_data)
     }
 
+    verifyDealerOtp(verify_data: any) {
+        return this.httpClient.post(environment.API_ENDPOINT + '/dealer/verifyDealerRegOtp' , verify_data)
+
+    }
+    // {
+    //     "personalPhone": "9844038037",
+    //     "otpNumber": "1111"
+    // }
 }

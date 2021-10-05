@@ -1,5 +1,5 @@
 .sidenav_container {
-  min-width: 60px; 
+  /* min-width: 60px;  */
   height: calc(100vh - 200px);
 }
   
@@ -18,13 +18,20 @@
 #open_close {
   border: none;
   background-color: black;
-  border-radius: 39%;
   color: white;
-  margin-top: 10%;
+  right: 5px;
+  bottom: 4vh;
+  position: absolute;
 }
 
 @media (min-width: 280px) and (max-width: 1023px) {
-  #open_close {
+  #open_close, .desktop_items {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile_items {
     display: none;
   }
 }
